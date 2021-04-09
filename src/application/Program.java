@@ -17,7 +17,7 @@ public class Program {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
 		try {
-			seller = new Seller(1, "Joao das Couves", "couves@gmail.com", sdf.parse("12/07/1994"), 3000.00);
+			seller = new Seller(1, "Joao das Couves", "couves@gmail.com", sdf.parse("12/07/1994"), 3000.00, obj);
 			
 		} catch (ParseException e) {
 			e.printStackTrace();

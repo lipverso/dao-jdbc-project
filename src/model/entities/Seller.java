@@ -18,12 +18,13 @@ public class Seller implements Serializable {
 		
 		}
 
-	public Seller(Integer id, String name, String email, Date birthDate, Double baseSalary) {
+	public Seller(Integer id, String name, String email, Date birthDate, Double baseSalary, Department department) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.birthDate = birthDate;
 		this.baseSalary = baseSalary;
+		this.department = department;
 	}
 
 	public Integer getId() {
@@ -66,15 +67,19 @@ public class Seller implements Serializable {
 		this.baseSalary = baseSalary;
 	}
 
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((baseSalary == null) ? 0 : baseSalary.hashCode());
-		result = prime * result + ((birthDate == null) ? 0 : birthDate.hashCode());
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
 
@@ -87,39 +92,18 @@ public class Seller implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Seller other = (Seller) obj;
-		if (baseSalary == null) {
-			if (other.baseSalary != null)
-				return false;
-		} else if (!baseSalary.equals(other.baseSalary))
-			return false;
-		if (birthDate == null) {
-			if (other.birthDate != null)
-				return false;
-		} else if (!birthDate.equals(other.birthDate))
-			return false;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
 		return true;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", baseSalary="
 				+ baseSalary + ", department=" + department + "]";
 	}
-	
 	
 }
